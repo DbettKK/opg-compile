@@ -17,8 +17,8 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
         init();
-        String path = "D:\\大学\\大三上\\编译\\git仓库\\opg-compile\\test.txt";
-        //String path = args[0];
+        //String path = "D:\\大学\\大三上\\编译\\git仓库\\opg-compile\\test.txt";
+        String path = args[0];
         BufferedReader in = new BufferedReader(new FileReader(path));
         String str;
         while ((str = in.readLine()) != null) {
