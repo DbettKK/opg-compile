@@ -67,11 +67,14 @@ public class Test2 {
                 System.exit(0);
             }
         } else if (opg[map.get(opStack.peek())][map.get(c)] == 0) {
+            if (c == ')') {
+                System.out.println("I)");
+            }
             opStack.pop();
-            System.out.println("I)");
             System.out.println('R');
         } else if (opg[map.get(opStack.peek())][map.get(c)] < 0) {
             opStack.push(c);
+            System.out.println("R");
             System.out.println("I" + c);
         } else if (opg[map.get(opStack.peek())][map.get(c)] == 128) {
             // 错误
