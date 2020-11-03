@@ -17,8 +17,8 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
         init();
-        //String path = "D:\\大学\\大三上\\编译\\git仓库\\opg-compile\\test.txt";
-        String path = args[0];
+        String path = "D:\\大学\\大三上\\编译\\git仓库\\opg-compile\\test.txt";
+        //String path = args[0];
         BufferedReader in = new BufferedReader(new FileReader(path));
         String str;
         while ((str = in.readLine()) != null) {
@@ -67,15 +67,9 @@ public class Test {
                     char t = stack.pop();
                     if (t == '#') break;
                     tmp.append(t);
-                    String res = check(tmp.toString());
-                    if (!res.equals("")) {
-                        if (res.equals("r")) {
-                            stack.push('V');
-                            System.out.println("R");
-                        } else {
-                            stack.push('V');
-                            System.out.println("R");
-                        }
+                    if (check(tmp.toString())) {
+                        stack.push('V');
+                        System.out.println("R");
                         isCheck = true;
                         break;
                     }
@@ -103,26 +97,18 @@ public class Test {
         }
     }
 
-    public static String check(String str) {
+    public static boolean check(String str) {
         String[] legals = {
                 "V+V", ")V(", "i", "V*V"
         };
         boolean isLegal = false;
         for (String legal : legals) {
-            if (str.contains(legal)) {
-                String tmp = str.substring(0, str.length() - legal.length());
-                if (tmp.length() != 0) {
-                    return tmp;
-                }
+            if (str.equals(legal)) {
                 isLegal = true;
                 break;
             }
         }
-        if (!isLegal) {
-            return "";
-        } else {
-            return "r";
-        }
+        return isLegal;
     }
 
     public static void init() {
