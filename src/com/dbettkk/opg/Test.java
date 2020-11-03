@@ -65,9 +65,18 @@ public class Test {
                     char t = stack.pop();
                     if (t == '#') break;
                     tmp.append(t);
-                    if (check(tmp.toString())) {
-                        stack.push('V');
-                        System.out.println("R");
+                    String res = check(tmp.toString());
+                    if (!res.equals("")) {
+                        if (res.equals("r")) {
+                            stack.push('V');
+                            System.out.println("R");
+                        } else {
+                            stack.push('V');
+                            System.out.println("R");
+                            for (int i=0;i<res.length();i++){
+                                stack.push(res.charAt(i));
+                            }
+                        }
                         isCheck = true;
                         break;
                     }
@@ -95,18 +104,26 @@ public class Test {
         }
     }
 
-    public static boolean check(String str) {
+    public static String check(String str) {
         String[] legals = {
                 "V+V", ")V(", "i", "V*V"
         };
         boolean isLegal = false;
         for (String legal : legals) {
-            if (str.equals(legal)) {
+            if (str.contains(legal)) {
+                String tmp = str.substring(0, str.length() - legal.length());
+                if (tmp.length() != 0) {
+                    return tmp;
+                }
                 isLegal = true;
                 break;
             }
         }
-        return isLegal;
+        if (!isLegal) {
+            return "";
+        } else {
+            return "r";
+        }
     }
 
     public static void init() {
