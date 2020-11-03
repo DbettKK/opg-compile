@@ -75,9 +75,6 @@ public class Test {
                         } else {
                             stack.push('V');
                             System.out.println("R");
-                            for (int i=0;i<res.length();i++){
-                                stack.push(res.charAt(i));
-                            }
                         }
                         isCheck = true;
                         break;
