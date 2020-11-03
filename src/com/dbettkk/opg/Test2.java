@@ -49,6 +49,7 @@ public class Test2 {
     public static void judge(char c) {
         if (map.get(c) == null) {
             System.out.println("E");
+            return;
         }
         if (c == 'i') {
             objStack.push(c);
