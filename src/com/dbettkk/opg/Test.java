@@ -17,18 +17,19 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
         init();
-        //String path = "D:\\大学\\大三上\\编译\\git仓库\\opg-compile\\test.txt";
-        String path = args[0];
+        String path = "D:\\大学\\大三上\\编译\\git仓库\\opg-compile\\test.txt";
+        //String path = args[0];
         BufferedReader in = new BufferedReader(new FileReader(path));
         String str;
         while ((str = in.readLine()) != null) {
-            System.out.println(str);
-            /*stack.clear();
+            //System.out.println(str);
+            stack.clear();
             stack.push('#');
             //System.out.println("---------------");
             //System.out.println("分析字符串为：" + str);
             str = str + '#';
-            checkOpg(str);*/
+            checkOpg(str);
+            //break;
         }
     }
 
@@ -137,8 +138,8 @@ public class Test {
         opg[0] = new int[]{1, -1, -1, -1, 1, 1};
         opg[1] = new int[]{1, 1, -1, -1, 1, 1};
         opg[2] = new int[]{1, 1, 128, 128, 1, 1};
-        opg[3] = new int[]{-1, -1, -1, -1, 0, 128};
+        opg[3] = new int[]{-1, -1, -1, -1, 0, 1};
         opg[4] = new int[]{1, 1, 128, 128, 1, 1};
-        opg[5] = new int[]{-1, -1, -1, -1, 128, 0};
+        opg[5] = new int[]{-1, -1, -1, -1, -1, 0};
     }
 }
