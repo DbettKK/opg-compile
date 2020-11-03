@@ -59,8 +59,8 @@ public class Test2 {
             try {
                 objStack.pop();
                 opStack.pop();
-                System.out.println('R');
                 objStack.pop();
+                System.out.println('R');
                 objStack.push('i');
                 judge(c);
             } catch (Exception e) {
