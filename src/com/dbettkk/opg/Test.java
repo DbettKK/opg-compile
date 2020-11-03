@@ -22,12 +22,13 @@ public class Test {
         BufferedReader in = new BufferedReader(new FileReader(path));
         String str;
         while ((str = in.readLine()) != null) {
-            stack.clear();
+            System.out.println(str);
+            /*stack.clear();
             stack.push('#');
             //System.out.println("---------------");
             //System.out.println("分析字符串为：" + str);
             str = str + '#';
-            checkOpg(str);
+            checkOpg(str);*/
         }
     }
 
